@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-  color: #8f8f8f;
+  color: #fff;
 }
 
 /* Headings */
@@ -39,6 +39,9 @@ p {
 
 .white-section {
   background-color: #fff;
+}
+.white-section p{
+  color: black;
 }
 
 /* Navigation Bar */
@@ -83,20 +86,21 @@ p {
 /* Title Image */
 
 .title-image {
-  width: 270px;
-  height: 270px;
+  width: 250px;
+  height: 250px;
   transform: rotate(5deg);
   position: absolute;
-  right: 1%;
+  right: 5%;
+  top: 20%;
   z-index: 22;
-  border-radius: 50%;
+  border-radius: 15%;
 }
 .title-image1 {
-  width: 280px;
+  width: 350px;
   height: 280px;
   transform: rotate(25deg);
   position: absolute;
-  left: 75%;
+  left: 65%;
   z-index: 3;
   border-radius: 15%;
 }
@@ -109,6 +113,33 @@ p {
   z-index: 2;
   top: 3%;
   border-radius: 15%;
+}
+
+
+/* FOOD CARDS */
+
+.card h4{
+  color: #485563;  /* fallback for old browsers */
+color: -webkit-linear-gradient(to right, #29323c, #485563);  /* Chrome 10-25, Safari 5.1-6 */
+color: linear-gradient(to right, #29323c, #485563); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.card h3{
+  background-color: #FEE140;
+background-image: linear-gradient(90deg, #FEE140 0%, #FA709A 50%, #505acb 100%);
+
+}
+.card button{
+  background: #780206;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #061161, #780206);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #061161, #780206); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.card a{
+  color: beige;
+}
+.card p {
+  color: #41aea9;
 }
 /* Features Section */
 
@@ -125,7 +156,7 @@ p {
 }
 
 .icon {
-  color: #ef8172;
+  color: #ff4c68;
   margin-bottom: 1rem;
 }
 
@@ -136,7 +167,7 @@ p {
 /* Testimonial Section */
 
 #testimonials {
-  background-color: #ef8172;
+  background-color: #ff4c68;
 }
 
 .testimonial-text {
@@ -152,7 +183,7 @@ p {
 
 
 #press {
-  background-color: #ef8172;
+  background-color: #ff4c68;
   padding-bottom: 3%;
 }
 
@@ -196,4 +227,51 @@ p {
     position: static;
     transform: rotate(0);
   }
+}
+
+
+
+
+
+/* LOGIN & REGISTER PAGE */
+
+.foodcolored-section {
+  background-color: #ff4c68;
+  color: #fff;
+  height: 100px;
+}
+
+.foodcontainer-fluid {
+  padding-top: 1%;
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-bottom: 0px;
+}
+
+.LOGIN, .REGISTER{
+  /* background: rgb(164,143,241);
+background: radial-gradient(circle, rgba(164,143,241,1) 0%, rgba(213,40,194,1) 35%, rgba(240,155,27,1) 70%, rgba(58,238,221,1) 100%); */
+background: rgb(244,194,93);
+background: linear-gradient(0deg, rgba(244,194,93,1) 1%, rgba(195,34,151,1) 11%, rgba(13,223,235,1) 99%);
+  height: 700px;
+
+  text-align: center;
+  padding-top: 5px;
+
+}
+.logcard{
+  background-color: beige;
+}
+.logcard a{
+  color: black;
+}
+
+
+
+/* ORDERING FOOD PAGE */
+
+
+
+#orderfood{
+
 }
