@@ -1,41 +1,348 @@
-<%- include("partials/header") %>
+<div class="foodpage">
 
-<link rel="stylesheet" href="/public/css/foodstyle.css">
+  <%- include("partials/header") %>
 
-<section id="orderfood">
-  <section class="foodcolored-section" id="foodtitle">
-    <div class="foodcontainer-fluid">
-      <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="/">FoodHub</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="logout">LogOut</a>
-            </li>
-          </ul>
+  <link rel="stylesheet" href="/public/css/foodstyle.css">
+
+  <section id="orderfood">
+    <section class="foodcolored-section" id="foodtitle">
+      <div class="foodcontainer-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <a class="navbar-brand" href="/">FoodHub</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="logout">LogOut</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </section>
+    <h2>ORDER FOOD</h2>
+
+
+  <br>
+  <!-- <h6>INDIAN FOOD</h6> -->
+  <table class="menutable">
+    <tr>
+      <th><h3>NON-VEG ITEM</h3></th>
+      <th><h3>VEG ITEM</h3></th>
+    </tr>
+    <tr>
+      <th><h4 style="margin-left: 87%">~~~INDIAN~~~</h4></th>
+    </tr>
+    <tr>
+      <td>
+        <div class="menulist">
+          <% menu.forEach(function(menu){ %>
+            <% if((menu.Id == 1)&&(menu.Type == 'Indian')){ %>
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" style=" height: 15rem;" src="<%= menu.Img %>" alt="">
+              <div class="card-body">
+                <!-- <h5 class="card-title"><%= menu.OrderNo %></h5> -->
+                <p class="card-text"><%= menu.Dish %></p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Rs.<%= menu.Price %></li>
+              </ul>
+              <div class="card-body">
+                <form action="/action_page.php">
+                  <label for="points">Qt:</label>
+                  <input style="width: 50px;" placeholder="0" type="number" id="points" name="Unit" step="1" max="8" min="0" value="0"> 
+                  <!-- <a href="#" class="card-link" style="color: Black;"> ADD TO CART</a> -->
+                  <button type="button" name="button" onclick="addTocart('<%= menu.Dish %>',points.value,'<%= menu.Price %>')" style="color: White;">ADD TO CART</button>
+                </form>
+
+              </div>
+            </div>
+            <% } %>
+          <% }); %>
         </div>
-      </nav>
+      </td>
+      <td>
+        <div class="menulist">
+          <% menu.forEach(function(menu){ %>
+            <% if((menu.Id == 2)&&(menu.Type == 'Indian')){ %>
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" style=" height: 15rem;" src="<%= menu.Img %>" alt="">
+              <div class="card-body">
+                <!-- <h5 class="card-title"><%= menu.OrderNo %></h5> -->
+                <p class="card-text"><%= menu.Dish %></p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Rs.<%= menu.Price %></li>
+              </ul>
+              <div class="card-body">
+                <form action="/action_page.php">
+                  <label for="points">Qt:</label>
+                  <input style="width: 50px;" placeholder="0" type="number" id="points" name="Unit" step="1" max="8" min="0" default='0' value="0">
+                  <button type="button" name="button" onclick="addTocart('<%= menu.Dish %>',points.value,'<%= menu.Price %>')" style="color: White;">ADD TO CART</button>
+                </form>
+              </div>
+            </div>
+            <% } %>
+          <% }); %>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <th><h4 style="margin-left: 87%">~~~ASIAN~~~</h4></th>
+    </tr>
+    <tr>
+      <td>
+        <div class="menulist">
+          <% menu.forEach(function(menu){ %>
+            <% if((menu.Id == 1)&&(menu.Type == 'Asian')){ %>
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" style=" height: 15rem;" src="<%= menu.Img %>" alt="">
+              <div class="card-body">
+                <!-- <h5 class="card-title"><%= menu.OrderNo %></h5> -->
+                <p class="card-text"><%= menu.Dish %></p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Rs.<%= menu.Price %></li>
+              </ul>
+              <div class="card-body">
+                <form action="/action_page.php">
+                  <label for="points">Qt:</label>
+                  <input style="width: 50px;" placeholder="0" type="number" id="points" name="Unit" step="1" max="8" min="0" default='0' value="0">
+                  <button type="button" name="button" onclick="addTocart('<%= menu.Dish %>',points.value,'<%= menu.Price %>')" style="color: White;">ADD TO CART</button>
+                </form>
+
+              </div>
+            </div>
+            <% } %>
+          <% }); %>
+        </div>
+      </td>
+      <td>
+        <div class="menulist">
+          <% menu.forEach(function(menu){ %>
+            <% if((menu.Id == 2)&&(menu.Type == 'Asian')){ %>
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" style=" height: 15rem;" src="<%= menu.Img %>" alt="">
+              <div class="card-body">
+                <!-- <h5 class="card-title"><%= menu.OrderNo %></h5> -->
+                <p class="card-text"><%= menu.Dish %></p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Rs.<%= menu.Price %></li>
+              </ul>
+              <div class="card-body">
+                <form action="/action_page.php">
+                  <label for="points">Qt:</label>
+                  <input style="width: 50px;" placeholder="0" type="number" id="points" name="Unit" step="1" max="8" min="0" default='0'  value="0">
+                  <button type="button" name="button" onclick="addTocart('<%= menu.Dish %>',points.value,'<%= menu.Price %>')" style="color: White;">ADD TO CART</button>
+                </form>
+              </div>
+            </div>
+            <% } %>
+          <% }); %>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <th><h4 style="margin-left: 85%">~~~ITALIAN~~~</h4></th>
+    </tr>
+    <tr>
+      <td>
+        <div class="menulist">
+          <% menu.forEach(function(menu){ %>
+            <% if((menu.Id == 1)&&(menu.Type == 'Italian')){ %>
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" style=" height: 15rem;" src="<%= menu.Img %>" alt="">
+              <div class="card-body">
+                <!-- <h5 class="card-title"><%= menu.OrderNo %></h5> -->
+                <p class="card-text"><%= menu.Dish %></p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Rs.<%= menu.Price %></li>
+              </ul>
+              <div class="card-body">
+                <form action="/action_page.php">
+                  <label for="points">Qt:</label>
+                  <input style="width: 50px;" placeholder="0" type="number" id="points" name="Unit" step="1" max="8" min="0" default='0' value="0">
+                  <button type="button" name="button" onclick="addTocart('<%= menu.Dish %>',points.value,'<%= menu.Price %>')" style="color: White;">ADD TO CART</button>
+                </form>
+
+              </div>
+            </div>
+            <% } %>
+          <% }); %>
+        </div>
+      </td>
+      <td>
+        <div class="menulist">
+          <% menu.forEach(function(menu){ %>
+            <% if((menu.Id == 2)&&(menu.Type == 'Italian')){ %>
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" style=" height: 15rem;" src="<%= menu.Img %>" alt="">
+              <div class="card-body">
+                <!-- <h5 class="card-title"><%= menu.OrderNo %></h5> -->
+                <p class="card-text"><%= menu.Dish %></p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Rs.<%= menu.Price %></li>
+              </ul>
+              <div class="card-body">
+                <form action="/action_page.php">
+                  <label for="points">Qt:</label>
+                  <input style="width: 50px;" placeholder="0" type="number" id="points" name="Unit" step="1" max="8" min="0" default='0'  value="0">
+                  <button type="button" name="button" onclick="addTocart('<%= menu.Dish %>',points.value,'<%= menu.Price %>')" style="color: White;">ADD TO CART</button>
+                </form>
+              </div>
+            </div>
+            <% } %>
+          <% }); %>
+        </div>
+      </td>
+    </tr>
+
+  </table>
+
+
+  <br><br><br>
+  <!-- <table id="box">
+
+  </table> -->
+
+  <table>
+    <tr>
+      <th><h5>DISH</h5></th>
+      <th><h5>Quantity</h5></th>
+      <th><h5>Price</h5></th>
+      <th><h5>Cost</h5></th>
+    </tr>
+    <tr>
+      <td>
+        <li id="OrderedDish" style="color: black;"></li>
+      </td>
+      <td>
+        <ul>
+          <p id="OrderedDishQt" style="color: black;"></p>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <p id="OrderedDishPrice" style="color: black;"></p>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <p id="OrderedDishCost" style="color: black;"></p>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th>Total Bill</th>
+      <th><h5 id="Totalcost"  style="color: black;"></h5></th>
+    </tr>
+  </table>
+
+    <div class="row">
+      <div class="col-lg-4"></div>
+      <div class="col-lg-4">
+        <button class="btn btn-lg btn-block btn-dark" type="button"><a href="/tracker">ORDER FOOD</a></button>
+        <br><br>
+        <button class="btn btn-lg btn-block btn-dark" type="button"><a href="/logout">LOGOUT</a></button>
+      </div>
+      <div class="col-lg-4"></div>
     </div>
+
   </section>
-  <h1>ORDER FOOD</h1>
-  <br><br><br><br><br>
-  <div class="row">
-    <div class="col-lg-4"></div>
-    <div class="col-lg-4">
-      <button class="btn btn-lg btn-block btn-dark" type="button"><a href="/tracker">ORDER FOOD</a></button>
-      <br><br>
-      <button class="btn btn-lg btn-block btn-dark" type="button"><a href="/logout">LOGOUT</a></button>
-    </div>
-    <div class="col-lg-4"></div>
-  </div>
 
-</section>
+  <br><br>
 
 
-<%- include("partials/footer") %>
+  <script>
+    var Dish = [];
+    var Qt = [];
+    var Price = [];
+    var Cost =[];
+    var Qtresult =[];
+    var Priceresult =[];
+    var TotalBill=0;
+    var i,j;
+    document.getElementById("points").defaultValue = "0";
+
+        function addTocart (x,y,z) {
+          var count=0;
+
+          for(i=0;i<Dish.length;i++){
+            if(Dish[i]==x){
+              count=count+1;
+                Qt[i]=parseInt(Qt[i]);
+                var incre = parseInt(y);
+                Qt[i]=Qt[i]+incre;
+                Qt[i].toString();
+
+            }
+          }
+          if(count==0){
+            Dish.push(x);
+            Qt.push(y);
+            Price.push(z);
+          }
+
+    console.log(Dish);
+    Qtresult = Qt.map(function (x) {
+      return parseInt(x, 10);
+    });
+    console.log(Qtresult);
+    Priceresult = Price.map(function (x) {
+      return parseInt(x, 10);
+    });
+    console.log(Priceresult);
+
+    for (i=0;i<Qtresult.length;i++){
+      Cost[i]=Qtresult[i]*Priceresult[i];
+    }
+    console.log(Cost);
+    TotalBill=0;
+    for( i=0; i<Cost.length; i++){
+
+      TotalBill=TotalBill+Cost[i];
+    }
+    console.log("TOTAL BILL: ",TotalBill);
+
+
+//     var html = "<table border='1|1'>";
+// for (var i = 0; i < rows.length; i++) {
+//     html+="<tr>";
+//     html+="<td>"+Dish[i]+"</td>";
+//     html+="<td>"+Qtresult[i]+"</td>";
+//     html+="<td>"+Priceresult[i]+"</td>";
+//     html+="<td>"+Cost[i]+"</td>";
+//     html+="</tr>";
+//     html+="<tr>";
+//       html+="<td>"+TotalBill+"</td>";
+//     html+="</tr>";
+//
+// }
+// html+="</table>";
+// document.getElementById("box").innerHTML = html;
+
+    document.getElementById("OrderedDish").innerHTML = Dish;
+    document.getElementById("OrderedDishQt").innerHTML = Qtresult;
+    document.getElementById("OrderedDishPrice").innerHTML = Priceresult;
+    document.getElementById("OrderedDishCost").innerHTML = Cost;
+    document.getElementById("Totalcost").innerHTML = TotalBill;
+  }
+
+
+
+  </script>
+
+  <%- include("partials/footer") %>
+
+
+</div>

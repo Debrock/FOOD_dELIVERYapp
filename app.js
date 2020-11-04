@@ -20,8 +20,27 @@ app.use(express.static("public"));
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/userDB", {useNewUrlParser: true});
+// "mongodb+srv://dbFoodapp:<Foodapp>@projectdbs.ya4kr.mongodb.net/<userDB>?retryWrites=true&w=majority"
+// "mongodb://localhost:27017/userDB"
+mongoose.connect("mongodb+srv://dbFoodapp:Foodapp@projectdbs.ya4kr.mongodb.net/userDB?retryWrites=true&w=majority", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true
+});
 mongoose.set("useCreateIndex", true);
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
+const menuSchema = new mongoose.Schema ({
+  Id: String,
+  OrderNo: String,
+  Dish: String,
+  Price: String,
+  Type: String,
+  Img: String
+});
 
 const userSchema = new mongoose.Schema ({
   email: String,
@@ -30,10 +49,12 @@ const userSchema = new mongoose.Schema ({
   secret: String
 });
 
+
 userSchema.plugin(passportLocalMongoose);
 userSchema.plugin(findOrCreate);
 
-const User = new mongoose.model("User", userSchema);
+var Menu = new mongoose.model("Menu", menuSchema);
+var User = new mongoose.model("User", userSchema);
 
 passport.use(User.createStrategy());
 
@@ -80,7 +101,19 @@ app.get("/auth/google/food",
   });
 
 app.get("/food",function(req,res){
-  res.render("food");
+  // let Menucard= [{'Dish': 'Cake','Price':'100'},{'Dish':'Burger','Price':'50'}]
+  // const db = client.db('userDB');
+  // const collection = db.collection('menu');
+  // Find some documents
+
+  Menu.find(function(err, Menucard){
+    if(err){
+    console.log(err);
+    }
+    else{
+      res.render("food", {'menu': Menucard});
+    }
+  });
 });
 
 app.get("/login",function(req,res){

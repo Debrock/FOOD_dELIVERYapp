@@ -1,6 +1,7 @@
 body {
   font-family: "Montserrat";
   text-align: center;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -58,6 +59,7 @@ p {
 
 .nav-item {
   padding: 0 18px;
+  color: beige;
 }
 
 .nav-link {
@@ -112,6 +114,39 @@ p {
   right: 30%;
   z-index: 2;
   top: 3%;
+  border-radius: 15%;
+}
+
+/* FOOD IMAGE */
+
+
+.food-image {
+  width: 450px;
+  height: 250px;
+  transform: rotate(270deg);
+  position: absolute;
+  top:  -20px;
+  left: -110px;
+  /* border-radius: 15%; */
+}
+.food-image1 {
+  width: 350px;
+  height: 240px;
+  transform: rotate(25deg);
+  position: absolute;
+  z-index: 0;
+  top: -45px;
+  left: 1100px;
+  border-radius: 15%;
+}
+.food-image2 {
+  width: 250px;
+  height: 200px;
+  transform: rotate(-200deg);
+  position: absolute;
+  z-index: 0;
+  top: 2px;
+  right: 50px;
   border-radius: 15%;
 }
 
@@ -270,8 +305,16 @@ background: linear-gradient(0deg, rgba(244,194,93,1) 1%, rgba(195,34,151,1) 11%,
 
 /* ORDERING FOOD PAGE */
 
+.foodpage{
+  overflow-x: hidden;
+}
+.menutable{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-
-#orderfood{
-
+.menulist{
+  display: flex;
+  flex-direction: row;
 }
