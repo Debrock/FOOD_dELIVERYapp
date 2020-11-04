@@ -41,12 +41,19 @@ var Dish = [];
 
     for (i=0;i<Qtresult.length;i++){
       Cost[i]=Qtresult[i]*Priceresult[i];
+      if(Cost[i]<0){
+        Cost[i]=0;
+        Dish[i]='';
+        Qtresult[i]='';
+        Priceresult[i]='';
+      }
     }
     console.log(Cost);
     TotalBill=0;
     for( i=0; i<Cost.length; i++){
 
       TotalBill=TotalBill+Cost[i];
+      
     }
     console.log("TOTAL BILL: ",TotalBill);
 
@@ -67,6 +74,7 @@ var Dish = [];
 
     text = "<ul>";
     Cost.forEach(myFunction);
+    // $(".btnDelete").bind("click", Delete);
     text += "</ul>";
     document.getElementById("OrderedDishCost").innerHTML = text;
 
@@ -76,7 +84,6 @@ var Dish = [];
       text += "<li>" + value + "</li>";
     } 
     
-
     // document.getElementById("OrderedDish").innerHTML += "<li>"+Dish[Dish.length-1]+"</li>";
     // document.getElementById("OrderedDishQt").innerHTML += "<li>"+Qtresult[Qtresult.length-1]+"</li>";
     // document.getElementById("OrderedDishPrice").innerHTML += "<li>"+Priceresult[Priceresult.length-1]+"</li>";
@@ -85,7 +92,8 @@ var Dish = [];
 
 
   }
-console.log(Dish);
+  
+
 
   function showbill(){
     var text = "<ul>";

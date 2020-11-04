@@ -55,7 +55,7 @@
               <div class="card-body">
                 <form action="/action_page.php">
                   <label for="points">Qt:</label>
-                  <input style="width: 50px;" placeholder="0" type="number" id="points" name="Unit" step="1" max="8" min="0" value="0"> 
+                  <input style="width: 50px;" placeholder="0" type="number" id="points" name="Unit" step="1" max="8" min="-2" value="0"> 
                   <!-- <a href="#" class="card-link" style="color: Black;"> ADD TO CART</a> -->
                   <button type="button" name="button" onclick="addTocart('<%= menu.Dish %>',points.value,'<%= menu.Price %>')" style="color: White;">ADD TO CART</button>
                 </form>
@@ -82,7 +82,7 @@
               <div class="card-body">
                 <form action="/action_page.php">
                   <label for="points">Qt:</label>
-                  <input style="width: 50px;" placeholder="0" type="number" id="points" name="Unit" step="1" max="8" min="0" default='0' value="0">
+                  <input style="width: 50px;" placeholder="0" type="number" id="points" name="Unit" step="1" max="8" min="-2" default='0' value="0">
                   <button type="button" name="button" onclick="addTocart('<%= menu.Dish %>',points.value,'<%= menu.Price %>')" style="color: White;">ADD TO CART</button>
                 </form>
               </div>
@@ -113,7 +113,7 @@
               <div class="card-body">
                 <form action="/action_page.php">
                   <label for="points">Qt:</label>
-                  <input style="width: 50px;" placeholder="0" type="number" id="points" name="Unit" step="1" max="8" min="0" default='0' value="0">
+                  <input style="width: 50px;" placeholder="0" type="number" id="points" name="Unit" step="1" max="8" min="-2" default='0' value="0">
                   <button type="button" name="button" onclick="addTocart('<%= menu.Dish %>',points.value,'<%= menu.Price %>')" style="color: White;">ADD TO CART</button>
                 </form>
 
@@ -139,7 +139,7 @@
               <div class="card-body">
                 <form action="/action_page.php">
                   <label for="points">Qt:</label>
-                  <input style="width: 50px;" placeholder="0" type="number" id="points" name="Unit" step="1" max="8" min="0" default='0'  value="0">
+                  <input style="width: 50px;" placeholder="0" type="number" id="points" name="Unit" step="1" max="8" min="-2" default='0'  value="0">
                   <button type="button" name="button" onclick="addTocart('<%= menu.Dish %>',points.value,'<%= menu.Price %>')" style="color: White;">ADD TO CART</button>
                 </form>
               </div>
@@ -170,7 +170,7 @@
               <div class="card-body">
                 <form action="/action_page.php">
                   <label for="points">Qt:</label>
-                  <input style="width: 50px;" placeholder="0" type="number" id="points" name="Unit" step="1" max="8" min="0" default='0' value="0">
+                  <input style="width: 50px;" placeholder="0" type="number" id="points" name="Unit" step="1" max="8" min="-2" default='0' value="0">
                   <button type="button" name="button" onclick="addTocart('<%= menu.Dish %>',points.value,'<%= menu.Price %>')" style="color: White;">ADD TO CART</button>
                 </form>
 
@@ -196,7 +196,7 @@
               <div class="card-body">
                 <form action="/action_page.php">
                   <label for="points">Qt:</label>
-                  <input style="width: 50px;" placeholder="0" type="number" id="points" name="Unit" step="1" max="8" min="0" default='0'  value="0">
+                  <input style="width: 50px;" placeholder="0" type="number" id="points" name="Unit" step="1" max="8" min="-2" default='0'  value="0">
                   <button type="button" name="button" onclick="addTocart('<%= menu.Dish %>',points.value,'<%= menu.Price %>')" style="color: White;">ADD TO CART</button>
                 </form>
               </div>
@@ -232,7 +232,12 @@
         </td>
         <td>
           <p id="OrderedDishCost" style="color: black;"></p>
+          <!-- <button onclick="Delete()">Remove</button> -->
+
         </td>
+        <!-- <td>
+          <button onclick="Delete()">Remove</button>
+        </td> -->
       </tr>
       <tr style="text-align: right;">
         <th>Total Bill</th><th></th><th></th>
