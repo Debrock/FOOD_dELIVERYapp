@@ -50,32 +50,37 @@ var Dish = [];
     }
     console.log("TOTAL BILL: ",TotalBill);
 
-    var text = "<ul>";
+    text = "<ul>";
     Dish.forEach(myFunction);
     text += "</ul>";
-    var text1 = "<ul>";
-    Qtresult.forEach(myFunction);
-    text1 += "</ul>";
-    var text2 = "<ul>";
-    Priceresult.forEach(myFunction);
-    text2 += "</ul>";
-    var text3 = "<ul>";
-    Cost.forEach(myFunction);
-    text3 += "</ul>";
     document.getElementById("OrderedDish").innerHTML = text;
-    document.getElementById("OrderedDishQt").innerHTML =  text1;
-    document.getElementById("OrderedDishPrice").innerHTML = text2;
-    document.getElementById("OrderedDishCost").innerHTML = text3;
+
+    text = "<ul >";
+    Qtresult.forEach(myFunction);
+    text += "</ul>";
+    document.getElementById("OrderedDishQt").innerHTML =  text;
+
+    text = "<ul>";
+    Priceresult.forEach(myFunction);
+    text += "</ul>";
+    document.getElementById("OrderedDishPrice").innerHTML = text;
+
+    text = "<ul>";
+    Cost.forEach(myFunction);
+    text += "</ul>";
+    document.getElementById("OrderedDishCost").innerHTML = text;
+
     document.getElementById("Totalcost").innerHTML = TotalBill;
+
     function myFunction(value) {
       text += "<li>" + value + "</li>";
     } 
     
 
-    // document.getElementById("OrderedDish").innerHTML = Dish//+= "<li>"+Dish[Dish.length-1]+"</li>";
-    // document.getElementById("OrderedDishQt").innerHTML = Qtresult //+= "<li>"+Qtresult[Qtresult.length-1]+"</li>";
-    // document.getElementById("OrderedDishPrice").innerHTML = Priceresult //+= "<li>"+Priceresult[Priceresult.length-1]+"</li>";
-    // document.getElementById("OrderedDishCost").innerHTML = Cost //+= "<li>"+Cost[Cost.length-1]+"</li>";
+    // document.getElementById("OrderedDish").innerHTML += "<li>"+Dish[Dish.length-1]+"</li>";
+    // document.getElementById("OrderedDishQt").innerHTML += "<li>"+Qtresult[Qtresult.length-1]+"</li>";
+    // document.getElementById("OrderedDishPrice").innerHTML += "<li>"+Priceresult[Priceresult.length-1]+"</li>";
+    // document.getElementById("OrderedDishCost").innerHTML += "<li>"+Cost[Cost.length-1]+"</li>";
     
 
 
