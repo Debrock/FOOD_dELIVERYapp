@@ -212,48 +212,58 @@
 
   <br><br><br>
   
-  <div style="margin-left: auto; margin-right: auto;">
-    <table style="border: 10px solid; margin-left: auto; margin-right: auto;">
-      <tr style="text-align: center;">
-        <th><h5>DISH</h5></th>
-        <th><h5>Quantity</h5></th>
-        <th><h5>Price</h5></th>
-        <th><h5>Cost</h5></th>
-      </tr>
-      <tr style="list-style-type: none;">
-        <td>
-            <p id="OrderedDish" style="color: black;"></p>
-        </td>
-        <td>
-            <p id="OrderedDishQt" style="color: black;"></p>
-        </td>
-        <td>
-          <p id="OrderedDishPrice" style="color: black;"></p>
-        </td>
-        <td>
-          <p id="OrderedDishCost" style="color: black;"></p>
-          <!-- <button onclick="Delete()">Remove</button> -->
-
-        </td>
-        <!-- <td>
-          <button onclick="Delete()">Remove</button>
-        </td> -->
-      </tr>
-      <tr style="text-align: right;">
-        <th>Total Bill</th><th></th><th></th>
-        <th><h5 id="Totalcost"  style="color: black;"></h5></th>
-      </tr>
-    </table>
+  <div style="margin-left: auto; margin-right: auto; text-align: center;">
+    
+    <form action="/tracker" method="POST">
+      <table style="border: 10px solid; margin-left: auto; margin-right: auto;">
+        <tr style="text-align: center;">
+          <th><h5>DISH</h5></th>
+          <th><h5>Quantity</h5></th>
+          <th><h5>Price</h5></th>
+          <th><h5>Cost</h5></th>
+        </tr>
+        <tr style="list-style-type: none;">
+          <td>
+              <p id="OrderedDish" style="color: black;"></p>
+          </td>
+          <td>
+              <p id="OrderedDishQt" style="color: black;"></p>
+          </td>
+          <td>
+            <p id="OrderedDishPrice" style="color: black;"></p>
+          </td>
+          <td>
+            <p id="OrderedDishCost" style="color: black;"></p>
+            <!-- <button onclick="Delete()">Remove</button> -->
+  
+          </td>
+          <!-- <td>
+            <button onclick="Delete()">Remove</button>
+          </td> -->
+        </tr>
+        <tr style="text-align: right;">
+          <th>Total Bill</th><th></th><th></th>
+          <th><h5 id="Totalcost"  style="color: black;"></h5></th>
+        </tr>
+      </table>
+      <br><br>
+      <div>
+        <input type="text" name="Name" placeholder="Name">
+        <input type="text" name="Address" placeholder="Address">
+        <input type="text" name="Phone" placeholder="Phone No.">
+        <br><br>
+        <button class="btn btn-lg btn-block btn-dark" style="width: 200px; margin-left: auto; margin-right: auto;" type="submit"><a href="/tracker">ORDER FOOD</a></button>
+      </div>
+    </form>
   </div>
 
-  
+
   <br><br><br>
-  
+  <hr>
     <div class="row">
       <div class="col-lg-4"></div>
       <div class="col-lg-4">
-        <button class="btn btn-lg btn-block btn-dark" type="button"><a href="/tracker">ORDER FOOD</a></button>
-        <br><br>
+        <!-- <button class="btn btn-lg btn-block btn-dark" type="button"><a href="/tracker">ORDER FOOD</a></button> -->
         <button class="btn btn-lg btn-block btn-dark" type="button"><a href="/logout">LOGOUT</a></button>
       </div>
       <div class="col-lg-4"></div>
